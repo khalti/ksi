@@ -7,7 +7,6 @@ package cmd
 import (
 	"github.com/khalti/ksi/util"
 	"github.com/spf13/cobra"
-	"os"
 )
 
 // rootCmd represents the base command when called without any subcommands
@@ -25,4 +24,5 @@ func Execute() {
 
 func init() {
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	util.Print(util.GithubUser())
 }
