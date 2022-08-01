@@ -1,5 +1,5 @@
 package helper
 
-func Print()  {
+func print()  {
 	
 }
