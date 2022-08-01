@@ -7,7 +7,11 @@ import (
 // Either returns the current user from global config
 func GithubUser() string {
 	gitUserCmd := exec.Command("git config --global user.name")
-	output, _:= gitUserCmd.Output()
+	output, err:= gitUserCmd.Output()
+
+	if NotNil(err) {
+		
+	}
 
 	return string(output)
 }

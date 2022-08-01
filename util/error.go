@@ -5,8 +5,8 @@ import(
 )
 
 func HandleError(err error) {
-	if err != nil {
-		os.Exit(1)
+	if NotNil(err) {
 		Print(err.Error())
+		os.Exit(1)
 	}
 }
