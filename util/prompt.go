@@ -9,17 +9,11 @@ import (
 
 // Asks a user for prompt
 func Prompt(label string) string {
-	var s string
-	r:= bufio.NewReader(os.Stdin)
-	for{
-		fmt.Fprint(os.Stderr, label+" ")
-		s, err := r.ReadString('\n')
+	fmt.Print(label)
+	reader:= bufio.NewReader(os.Stdin)
+	line, err := reader.ReadString('\n')
 
-		HandleError(err)
+	HandleError(err)
 
-		if s != "" {
-			break
-		}
-	}
-	return strings.TrimSpace(s)
+	return strings.TrimSpace(line)
 } 
